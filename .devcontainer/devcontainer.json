@@ -1,0 +1,29 @@
+{
+  "name": "py-inventory-mgmt",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true
+    },
+    "ghcr.io/rails/devcontainer/features/postgres-client": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.flake8",
+        "mtxr.sqltools"
+      ],
+      "openFiles": [
+        "../.nurburgdev/README.md"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install -r requirements.txt && pip install uvicorn",
+  "forwardPorts": [8000]
+}

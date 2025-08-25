@@ -1,0 +1,15 @@
+# Services Configuration for Design and implement few critical APIs for inventory management
+# Generated service configuration
+
+
+name: py-inventory-mgmt
+directory: .
+cpuCores: 1
+memoryMB: 512
+instances: 1
+port: 8000
+runtime: python
+env:
+    HOST: "0.0.0.0"
+    PORT: 8000
+    

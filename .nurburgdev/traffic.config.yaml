@@ -1,0 +1,4 @@
+
+runtimeInMinutes: 15
+env:
+    HOST: py-inventory-mgmt:8000
