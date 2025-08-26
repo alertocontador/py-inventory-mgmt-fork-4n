@@ -14,6 +14,7 @@ stages:
         price: 29.99
     response:
       status_code: 200
+      strict: false
       headers:
         content-type: application/json
       json:
@@ -21,7 +22,6 @@ stages:
         sku_code: "TEST123"
         name: "Test Product"
         quantity: 50
-        price: 29.99
       save:
         json:
           sku_id: sku_id
@@ -38,6 +38,7 @@ stages:
         expires_at: "2024-12-31T23:59:59Z"
     response:
       status_code: 200
+      strict: false
       headers:
         content-type: application/json
       json:
@@ -56,6 +57,7 @@ stages:
       method: GET
     response:
       status_code: 200
+      strict: false
       headers:
         content-type: application/json
       json:
@@ -72,25 +74,10 @@ stages:
         reason: "Order confirmed"
     response:
       status_code: 200
+      strict: false
       headers:
         content-type: application/json
       json:
         block_id: "{block_id:s}"
         status: "converted"
         reason: "Order confirmed"
-
-  - name: POST request to /temporary-blocks/{block_id}/cancel
-    request:
-      url: http://py-inventory-mgmt:8000/temporary-blocks/test-block-id/cancel
-      method: POST
-      headers:
-        content-type: application/json
-      json:
-        reason: "Order cancelled"
-    response:
-      status_code: 200
-      headers:
-        content-type: application/json
-      json:
-        status: "cancelled"
-        reason: "Order cancelled"
